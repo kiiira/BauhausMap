@@ -15,6 +15,15 @@
         android:scaleType="fitXY"
         android:src="@drawable/header_image"/>
 
+    <ImageView
+        android:id="@+id/cityImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/headerImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"/>
+
     <TextView
         android:id="@+id/cityTitle"
         android:layout_width="wrap_content"

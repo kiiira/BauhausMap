@@ -21,7 +21,7 @@
     <string name="Frankfurt">Frankfurt am Main</string>
 
 <!--places in stuttgart-->
-    <string name="first_place_stuttgart">Liederhalle</string>
+    <string name="first_place_stuttgart">Kultur- &amp; Kongresszentrum Liederhalle</string>
     <string name="first_place_address_stuttgart">Berliner Platz 1–3 70174</string>
 
     <string name="second_place_stuttgart">Le Corbusier House at Weissenhof</string>
