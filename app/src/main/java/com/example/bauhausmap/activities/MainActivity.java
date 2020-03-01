@@ -10,16 +10,15 @@ import com.example.bauhausmap.R;
 
 public class MainActivity extends Activity {
 
-    private String firstCityName = "Stuttgart";
-    private String secondCityName = "München";
+    private String firstCityName;
+    private String secondCityName;
 
-    //TODO: get strings from string.xml
-    String firstCityDescription = "";
-    String secondCityDescription = "";
+    private String firstCityDescription;
+    private String secondCityDescription;
 
     //TODO: get images
     private static final int firstCityImageId = R.drawable.stuttgart_image;
-    private static final int secondCityImageId = R.drawable.cologne_image;
+    private static final int secondCityImageId = R.drawable.hanover_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +27,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ImageButton firstImageButton = findViewById(R.id.first_button);
         ImageButton secondImageButton = findViewById(R.id.second_button);
+
+        firstCityDescription = getString(R.string.first_city_desc);
+        secondCityDescription = getString(R.string.second_city_desc);
+
+        firstCityName = getString(R.string.Stuttgart);
+        secondCityName = getString(R.string.Hanover);
+
 
         View.OnClickListener onFirstButtonClickListener = v -> {
             Intent intent = CityDetailsActivity.newIntent(this, firstCityName, firstCityDescription, firstCityImageId);

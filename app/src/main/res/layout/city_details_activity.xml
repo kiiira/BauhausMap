@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/showPlacesButton"
-        android:text="@string/first_place"
+        android:text="@string/first_place_stuttgart"
         android:textSize="20sp"/>
 
     <Button
@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/firstPlaceButton"
-        android:text="@string/second_place"
+        android:text="@string/second_place_stuttgart"
         android:textSize="20sp"/>
 
 </RelativeLayout>

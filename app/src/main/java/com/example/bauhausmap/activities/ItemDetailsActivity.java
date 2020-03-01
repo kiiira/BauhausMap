@@ -21,11 +21,11 @@ public class ItemDetailsActivity extends Activity {
     private ImageView placeImage;
 
 
-    public static Intent newIntent(@NonNull Activity activity, String cityName, String cityDescription, int cityImageId) {
+    public static Intent newIntent(@NonNull Activity activity, String placeName, String placeAddress, int placeImageId) {
         Intent intent = new Intent(activity, ItemDetailsActivity.class);
-        intent.putExtra(PLACE_NAME, cityName);
-        intent.putExtra(PLACE_ADDRESS, cityDescription);
-        intent.putExtra(PLACE_IMAGE, cityImageId);
+        intent.putExtra(PLACE_NAME, placeName);
+        intent.putExtra(PLACE_ADDRESS, placeAddress);
+        intent.putExtra(PLACE_IMAGE, placeImageId);
         return intent;
     }
     @Override
