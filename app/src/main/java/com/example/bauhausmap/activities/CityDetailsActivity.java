@@ -96,7 +96,7 @@ public class CityDetailsActivity extends Activity {
         mCityDescription.setText(city_description);
 
         int city_image = getIntent().getIntExtra(CITY_IMAGE, 0);
-        mCityImage.setImageResource(R.drawable.hanover_image);
+        mCityImage.setImageResource(R.drawable.cities_image);
     }
 
 }
