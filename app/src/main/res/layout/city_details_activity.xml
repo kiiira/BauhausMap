@@ -11,8 +11,6 @@
         android:layout_height="67dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:maxHeight="180dp"
-        android:scaleType="fitXY"
         android:src="@drawable/header_image"/>
 
     <ImageView
@@ -32,7 +30,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="15dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAllCaps="true"/>
 
     <TextView
         android:id="@+id/description"

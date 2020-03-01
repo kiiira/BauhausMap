@@ -16,9 +16,7 @@ public class MainActivity extends Activity {
     private String firstCityDescription;
     private String secondCityDescription;
 
-    //TODO: get images
-    private static final int firstCityImageId = R.drawable.stuttgart_image;
-    private static final int secondCityImageId = R.drawable.hanover_image;
+    private static final int citiesImageId = R.drawable.cities_image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +34,12 @@ public class MainActivity extends Activity {
 
 
         View.OnClickListener onFirstButtonClickListener = v -> {
-            Intent intent = CityDetailsActivity.newIntent(this, firstCityName, firstCityDescription, firstCityImageId);
+            Intent intent = CityDetailsActivity.newIntent(this, firstCityName, firstCityDescription, citiesImageId);
             startActivity(intent);
             };
 
         View.OnClickListener onSecondButtonClickListener = v -> {
-            Intent intent = CityDetailsActivity.newIntent(this, secondCityName, secondCityDescription, secondCityImageId);
+            Intent intent = CityDetailsActivity.newIntent(this, secondCityName, secondCityDescription, citiesImageId);
             startActivity(intent);
         };
 
