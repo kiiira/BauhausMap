@@ -15,17 +15,16 @@
         android:scaleType="fitXY"/>
 
     <TextView
-        android:id="@+id/placeName"
+        android:id="@+id/placeAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="15dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/placeAddress"
+        android:id="@+id/placeName"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/placeImage"

@@ -25,9 +25,14 @@ public class CityDetailsActivity extends Activity {
     private static final String CITY_DESCRIPTION = "City description";
     private static final String CITY_IMAGE = "City image";
 
-    private String firstPlaceName = "Place name line 1";
-    private String firstPlaceAddress = "Address line 1";
-    private int firstPlaceImage = 0;
+    private String stuttgartFirstPlaceName;
+    private String stuttgartFirstPlaceAddress;
+    private int stuttgartFirstPlaceImage = 0;
+
+    private String stuttgartSecondPlaceName;
+    private String stuttgartSecondPlaceAddress;
+    private int stuttgartSecondPlaceImage = 0;
+
 
     public static Intent newIntent(@NonNull Activity activity, String cityName, String cityDescription, int cityImageId) {
         Intent intent = new Intent(activity, CityDetailsActivity.class);
@@ -49,7 +54,6 @@ public class CityDetailsActivity extends Activity {
         mFirstOption = findViewById(R.id.firstPlaceButton);
         mSecondOption = findViewById(R.id.secondPlaceButton);
 
-
         mFirstOption.setVisibility(View.GONE);
         mSecondOption.setVisibility(View.GONE);
 
@@ -59,8 +63,14 @@ public class CityDetailsActivity extends Activity {
             mSecondOption.setVisibility(View.VISIBLE);
         });
 
+        stuttgartFirstPlaceName = getString(R.string.first_place_stuttgart);
+        stuttgartFirstPlaceAddress = getString(R.string.first_place_address_stuttgart);
+
+        stuttgartSecondPlaceName = getString(R.string.second_place_stuttgart);
+        stuttgartSecondPlaceAddress = getString(R.string.second_place_address_stuttgart);
+
         View.OnClickListener onFirstButtonClickListener = v -> {
-            Intent intent = ItemDetailsActivity.newIntent(this, firstPlaceAddress, firstPlaceName, firstPlaceImage);
+            Intent intent = ItemDetailsActivity.newIntent(this, stuttgartFirstPlaceAddress, stuttgartFirstPlaceName, stuttgartFirstPlaceImage);
             startActivity(intent);
         };
 
