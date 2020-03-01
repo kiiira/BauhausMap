@@ -14,6 +14,11 @@ import com.example.bauhausmap.R;
 
 public class CityDetailsActivity extends Activity {
 
+
+    private static final float ALPHA_ACTIVE = 1f;
+    private static final float ALPHA_INACTIVE = 0.5f;
+
+
     private ImageView mCityImage;
     private TextView mCityTitle;
     private TextView mCityDescription;
@@ -58,7 +63,8 @@ public class CityDetailsActivity extends Activity {
         mSecondOption.setVisibility(View.GONE);
 
         mShowPlacesButton.setOnClickListener(v -> {
-            mShowPlacesButton.setVisibility(View.GONE);
+            mShowPlacesButton.setAlpha(ALPHA_INACTIVE);
+            mShowPlacesButton.setEnabled(false);
             mFirstOption.setVisibility(View.VISIBLE);
             mSecondOption.setVisibility(View.VISIBLE);
         });
@@ -89,8 +95,8 @@ public class CityDetailsActivity extends Activity {
         String city_description = getIntent().getStringExtra(CITY_DESCRIPTION);
         mCityDescription.setText(city_description);
 
-//        int city_image = getIntent().getIntExtra(CITY_IMAGE, 0);
-//        mCityDescription.setText(city_image);
+        int city_image = getIntent().getIntExtra(CITY_IMAGE, 0);
+        mCityImage.setImageResource(R.drawable.hanover_image);
     }
 
 }
