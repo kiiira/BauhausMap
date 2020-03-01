@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.bauhausmap">
+
+    <uses-permission android:name="com.example.mapdemo.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/bauhaus_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/bauhaus_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name=".activities.LauncherActivity"
+            android:theme="@style/BauhausLauncher">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/MainTheme"/>
+
+        <activity android:name=".activities.CityDetailsActivity"
+            android:theme="@style/MainTheme"/>
+
+        <activity android:name=".activities.ItemDetailsActivity"
+            android:theme="@style/MainTheme"/>
+
+    </application>
+
+</manifest>

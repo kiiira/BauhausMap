@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Bauhaus Map</string>
+    <string name="launch_view_name">LaunchScreen</string>
+    <string name="launch_text_view">BAUHAUS MAP</string>
+    <string name="launch_footer_text_view">AN ARCHITECTURAL GUIDE</string>
+    <string name="show_places">Show places</string>
+
+
+    <string name="Stuttgart">Stuttgart</string>
+    <string name="München">München</string>
+    <string name="Frankfurt">Frankfurt am Main</string>
+
+<!--places in stuttgart-->
+    <string name="first_place">Place1</string>
+    <string name="first_place_desc">Feiert das Bauhaus sein 100-jähriges Gründungsjubiläum.
+        Die Region Stuttgart hat große architektonische und kulturelle Highlights des Neuen Bauens,
+        der Moderne und Avantgarde zu bieten</string>
+
+    <string name="second_place">Place2</string>
+    <string name="second_place_desc">Ein „Original“ der berühmten Architekten konnte sich in der
+        schon immer eher traditionsverbundenen Stadt an der Isar zwar nicht etablieren.
+        Dennoch sind auch hier deren Spuren eindeutig erkennbar.
+        Ein schönes Beispiel hierfür, um nur eines zu nennen, ist das Haus der Architektur –
+        obendrein passenderweise Sitz der Bayerischen Architektenkammer.</string>
+
+<!--places in munich-->
+    <string name="first_place2">Place1</string>
+    <string name="second_place2">Place2</string>
+
+
+</resources>
