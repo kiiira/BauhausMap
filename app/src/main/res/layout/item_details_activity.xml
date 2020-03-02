@@ -3,10 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
-    tools:context=".activities.CityDetailsActivity" >
+    tools:context=".activities.CityDetailsActivity"
+    android:id="@+id/item_details">
 
     <ImageView
-        android:id="@+id/placeImage"
+        android:id="@+id/place_image"
         android:layout_width="406dp"
         android:layout_height="67dp"
         android:layout_alignParentLeft="true"
@@ -15,7 +16,17 @@
         android:scaleType="fitXY"/>
 
     <TextView
-        android:id="@+id/placeAddress"
+        android:id="@+id/place_name"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/place_image"
+        android:layout_alignLeft="@id/place_image"
+        android:layout_alignRight="@id/place_image"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/place_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -23,15 +34,16 @@
         android:layout_marginTop="15dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/placeName"
-        android:layout_width="368dp"
+    <Button
+        android:id="@+id/open_google_maps"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/placeImage"
-        android:layout_alignLeft="@id/placeImage"
-        android:layout_alignRight="@id/placeImage"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_below="@id/place_address"
+        android:layout_alignLeft="@id/place_address"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="30dp"
+        android:gravity="left"
+        android:text="@string/Open_in_Google_Maps" />
 
 
 </RelativeLayout>

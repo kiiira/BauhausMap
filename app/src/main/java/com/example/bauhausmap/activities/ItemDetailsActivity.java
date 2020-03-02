@@ -2,7 +2,9 @@ package com.example.bauhausmap.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,8 +20,11 @@ public class ItemDetailsActivity extends Activity {
 
     private TextView placeName;
     private TextView placeAddress;
+    private TextView placeGoogleMaps;
     private ImageView placeImage;
 
+    private String location;
+    private String map;
 
     public static Intent newIntent(@NonNull Activity activity, String placeName, String placeAddress, int placeImageId) {
         Intent intent = new Intent(activity, ItemDetailsActivity.class);
@@ -28,14 +33,25 @@ public class ItemDetailsActivity extends Activity {
         intent.putExtra(PLACE_IMAGE, placeImageId);
         return intent;
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_details_activity);
 
-        placeName = findViewById(R.id.placeName);
-        placeAddress = findViewById(R.id.placeAddress);
-        placeImage = findViewById(R.id.placeImage);
+        placeName = findViewById(R.id.place_name);
+        placeAddress = findViewById(R.id.place_address);
+        placeImage = findViewById(R.id.place_image);
+        placeGoogleMaps = findViewById(R.id.open_google_maps);
+        location = getString(R.string.first_place_address_stuttgart)
+                .replaceAll(" ", "+");
+        map = "http://maps.google.co.in/maps?q=" + location;
+
+        placeGoogleMaps.setOnClickListener(v -> new Handler().postDelayed(() -> {
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(map));
+//            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);
+        }, 1000));
     }
 
     @Override
