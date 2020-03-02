@@ -8,6 +8,9 @@ import android.widget.ImageButton;
 
 import com.example.bauhausmap.R;
 
+/**
+ * Активити, описывающая основной экран с кнопками выбора города.
+ */
 public class MainActivity extends Activity {
 
     private String firstCityName;

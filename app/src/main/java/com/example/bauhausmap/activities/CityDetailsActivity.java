@@ -12,8 +12,10 @@ import androidx.annotation.NonNull;
 
 import com.example.bauhausmap.R;
 
+/**
+ * Активити, отображающая детали города: заголовок, описание, кнопки.
+ */
 public class CityDetailsActivity extends Activity {
-
 
     private static final float ALPHA_ACTIVE = 1f;
     private static final float ALPHA_INACTIVE = 0.5f;

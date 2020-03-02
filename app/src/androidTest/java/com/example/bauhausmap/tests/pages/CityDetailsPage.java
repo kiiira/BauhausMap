@@ -18,6 +18,9 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
+/**
+ * Страница, описывающая CityDetailsActivity.
+ */
 public class CityDetailsPage extends BasePage{
 
     @Rule
@@ -27,30 +30,53 @@ public class CityDetailsPage extends BasePage{
         this.rule = rule;
     }
 
+    /**
+     * Проверка активности и альфы кнопки.
+     */
     public void checkButtonActive(){
         onView(withId(R.id.show_places_button)).check(matches(withAlpha(1f))).check(matches(is(isEnabled())));
     }
 
+    /**
+     * Проверка неактивности и альфы кнопки.
+     */
     public void checkButtonInactive(){
         onView(withId(R.id.show_places_button)).check(matches(withAlpha(0.5f))).check(matches(not(isEnabled())));
     }
 
+    /**
+     * Нажатие кнопки отображения локаций.
+     */
     public void clickShowPlacesButton(){
         onView(withId(R.id.show_places_button)).perform(click());
     }
 
+    /**
+     * Проверка отображение страницы.
+     */
     public void assertPageDisplayed(){
         onView(withId(R.id.city_details_activity)).check(matches(isDisplayed()));
     }
 
+    /**
+     * Проверка названия первого города.
+     * @param name строка для проверки названия.
+     */
     public void checkFirstCityName(String name){
         onView(withId(R.id.city_title)).check(matches(withText(name)));
     }
 
+    /**
+     * Проверка названия первой локации.
+     * @param name строка для проверки первой локации.
+     */
     public void checkFirstPlaceName(String name){
         onView(withId(R.id.first_place_button)).check(matches(withText(name)));
     }
 
+    /**
+     * Кнопка первой локации.
+     */
     public void clickFirstPlaceButton(){
         onView(withId(R.id.first_place_button)).perform(click());
     }

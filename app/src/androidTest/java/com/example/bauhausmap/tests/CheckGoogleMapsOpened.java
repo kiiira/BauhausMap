@@ -15,9 +15,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * Тест на проверку открытия Google Maps
+ */
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class CheckGoogleMapsOpened {
-
 
     private MainPage mainPage;
     private CityDetailsPage cityDetailsPage;
@@ -27,7 +29,6 @@ public class CheckGoogleMapsOpened {
     public ActivityScenarioRule<MainActivity> mainActivityRule = new ActivityScenarioRule<>(MainActivity.class);
     private ActivityScenarioRule<CityDetailsActivity> cityDetailActivityRule = new ActivityScenarioRule<>(CityDetailsActivity.class);
     private ActivityScenarioRule<ItemDetailsActivity> itemDetailsActivityRule = new ActivityScenarioRule<>(ItemDetailsActivity.class);
-
 
     @Before
     public void setUp() {
