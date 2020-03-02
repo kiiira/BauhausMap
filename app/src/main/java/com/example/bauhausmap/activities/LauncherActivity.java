@@ -8,6 +8,9 @@ import androidx.annotation.Nullable;
 
 import com.example.bauhausmap.R;
 
+/**
+ * Активити, описывающая заставку splash screen.
+ */
 public class LauncherActivity extends Activity {
 
     private final int SPLASH_DISPLAY_LENGTH = 1500;

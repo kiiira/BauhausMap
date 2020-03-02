@@ -15,9 +15,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+/**
+ * Тест на проверку отображения элементов экрана адреса.
+ */
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class CheckCityItemDetailsVisibleTest {
-
 
     private MainPage mainPage;
     private CityDetailsPage cityDetailsPage;
@@ -27,7 +29,6 @@ public class CheckCityItemDetailsVisibleTest {
     public ActivityScenarioRule<MainActivity> mainActivityRule = new ActivityScenarioRule<>(MainActivity.class);
     private ActivityScenarioRule<CityDetailsActivity> cityDetailActivityRule = new ActivityScenarioRule<>(CityDetailsActivity.class);
     private ActivityScenarioRule<ItemDetailsActivity> itemDetailsActivityRule = new ActivityScenarioRule<>(ItemDetailsActivity.class);
-
 
     @Before
     public void setUp() {
@@ -39,9 +40,6 @@ public class CheckCityItemDetailsVisibleTest {
     private static final String FIRST_CITY_NAME = "Stuttgart";
     private static final String FIRST_PLACE_NAME = "Kultur- & Kongresszentrum Liederhalle";
 
-    /**
-     * Тест на проверку отображения элементов экрана адреса.
-     */
     @Test
     public void testItemDetailsVisible() {
 

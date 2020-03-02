@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 
 import com.example.bauhausmap.R;
 
+/**
+ * Активити, описывающая детали отдельной локации: название локации, адрес, ссылка на гугл карты.
+ */
 public class ItemDetailsActivity extends Activity {
 
     private static final String PLACE_NAME = "Place name";

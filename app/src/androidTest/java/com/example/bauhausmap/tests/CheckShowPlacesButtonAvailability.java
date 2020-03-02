@@ -13,7 +13,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-
+/**
+ * Тест на проверку доступности и состояния отображения кнопки.
+ */
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class CheckShowPlacesButtonAvailability {
 
@@ -30,9 +32,6 @@ public class CheckShowPlacesButtonAvailability {
         cityDetailsPage = new CityDetailsPage(cityDetailActivityRule);
     }
 
-    /**
-     * Тест на проверку доступности и состояния отображения кнопки.
-     */
     @Test
     public void testButtonDisabled() {
 

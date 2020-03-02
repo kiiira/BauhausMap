@@ -7,6 +7,10 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
+
+/**
+ * Матчер, сравнивающий текстовые значения.
+ */
 public class TextMatcher {
 
     public static Matcher<View> hasValueEqualTo(final String content) {
