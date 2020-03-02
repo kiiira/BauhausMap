@@ -52,12 +52,12 @@ public class CityDetailsActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.city_details_activity);
-        mCityImage = findViewById(R.id.headerImage);
-        mCityTitle = findViewById(R.id.cityTitle);
+        mCityImage = findViewById(R.id.header_image);
+        mCityTitle = findViewById(R.id.city_title);
         mCityDescription = findViewById(R.id.description);
-        mShowPlacesButton = findViewById(R.id.showPlacesButton);
-        mFirstOption = findViewById(R.id.firstPlaceButton);
-        mSecondOption = findViewById(R.id.secondPlaceButton);
+        mShowPlacesButton = findViewById(R.id.show_places_button);
+        mFirstOption = findViewById(R.id.first_place_button);
+        mSecondOption = findViewById(R.id.second_place_button);
 
         mFirstOption.setVisibility(View.GONE);
         mSecondOption.setVisibility(View.GONE);

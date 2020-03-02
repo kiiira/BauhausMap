@@ -44,15 +44,20 @@ public class CheckCityItemDetailsVisibleTest {
      */
     @Test
     public void testItemDetailsVisible() {
+
         mainPage.assertPageDisplayed();
         mainPage.clickFirstButton();
+
         cityDetailsPage.assertPageDisplayed();
         cityDetailsPage.clickShowPlacesButton();
         cityDetailsPage.checkFirstCityName(FIRST_CITY_NAME);
         cityDetailsPage.checkFirstPlaceName(FIRST_PLACE_NAME);
+        cityDetailsPage.clickFirstPlaceButton();
+
         itemDetailsPage.assertPageDisplayed();
         itemDetailsPage.checkAddressDisplayed();
         itemDetailsPage.checkNameDisplayed();
+        itemDetailsPage.assertAddressInput();
 
     }
 }

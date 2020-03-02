@@ -18,7 +18,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 
-public class CityDetailsPage {
+public class CityDetailsPage extends BasePage{
 
     @Rule
     public ActivityScenarioRule<CityDetailsActivity> rule;
@@ -28,15 +28,15 @@ public class CityDetailsPage {
     }
 
     public void checkButtonActive(){
-        onView(withId(R.id.showPlacesButton)).check(matches(withAlpha(1f))).check(matches(is(isEnabled())));
+        onView(withId(R.id.show_places_button)).check(matches(withAlpha(1f))).check(matches(is(isEnabled())));
     }
 
     public void checkButtonInactive(){
-        onView(withId(R.id.showPlacesButton)).check(matches(withAlpha(0.5f))).check(matches(not(isEnabled())));
+        onView(withId(R.id.show_places_button)).check(matches(withAlpha(0.5f))).check(matches(not(isEnabled())));
     }
 
     public void clickShowPlacesButton(){
-        onView(withId(R.id.showPlacesButton)).perform(click());
+        onView(withId(R.id.show_places_button)).perform(click());
     }
 
     public void assertPageDisplayed(){
@@ -44,11 +44,15 @@ public class CityDetailsPage {
     }
 
     public void checkFirstCityName(String name){
-        onView(withId(R.id.cityTitle)).check(matches(withText(name)));
+        onView(withId(R.id.city_title)).check(matches(withText(name)));
     }
 
     public void checkFirstPlaceName(String name){
-        onView(withId(R.id.firstPlaceButton)).check(matches(withText(name))).perform(click());
+        onView(withId(R.id.first_place_button)).check(matches(withText(name)));
+    }
+
+    public void clickFirstPlaceButton(){
+        onView(withId(R.id.first_place_button)).perform(click());
     }
 
 }

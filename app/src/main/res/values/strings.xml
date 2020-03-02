@@ -4,6 +4,7 @@
     <string name="launch_text_view">BAUHAUS MAP</string>
     <string name="launch_footer_text_view">AN ARCHITECTURAL GUIDE</string>
     <string name="show_places">Show places</string>
+    <string name="Open_in_Google_Maps">Open in Google Maps</string>
 
 
     <string name="Stuttgart">Stuttgart</string>
