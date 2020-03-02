@@ -58,5 +58,6 @@ public class CheckCityItemDetailsVisibleTest {
         itemDetailsPage.checkAddressDisplayed();
         itemDetailsPage.checkNameDisplayed();
         itemDetailsPage.assertAddressInput();
+
     }
 }
