@@ -1,6 +1,5 @@
 package com.example.bauhausmap.tests.pages;
 
-import android.content.Intent;
 import android.os.Build;
 
 import androidx.test.uiautomator.UiDevice;
@@ -36,16 +35,6 @@ class BasePage {
             sUiDevice = UiDevice.getInstance(getInstrumentation());
         }
         return sUiDevice;
-    }
-
-    public void collapseAndExpandApp(){
-        String packageName = getInstrumentation().getTargetContext().getPackageName();
-        if (isUIAvailable()) {
-            UiDevice uiDevice = getUiDevice();
-            uiDevice.pressHome();
-            Intent intent = getInstrumentation().getContext().getPackageManager().getLaunchIntentForPackage(packageName);
-            getInstrumentation().getContext().startActivity(intent);
-        }
     }
 
 }
