@@ -33,9 +33,9 @@ public class ItemDetailsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_details_activity);
 
-        placeName = findViewById(R.id.placeName);
-        placeAddress = findViewById(R.id.placeAddress);
-        placeImage = findViewById(R.id.placeImage);
+        placeName = findViewById(R.id.place_name);
+        placeAddress = findViewById(R.id.place_address);
+        placeImage = findViewById(R.id.place_image);
     }
 
     @Override
