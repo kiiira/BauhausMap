@@ -1,5 +1,8 @@
 package com.example.bauhausmap.tests.pages;
 
+import android.widget.EditText;
+import android.widget.TextView;
+
 import androidx.test.InstrumentationRegistry;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.uiautomator.UiObject;
@@ -17,6 +20,7 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static com.example.bauhausmap.tests.matchers.TextMatcher.hasValueEqualTo;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Страница, описывающая ItemDetailsActivity.
@@ -77,5 +81,17 @@ public class ItemDetailsPage extends BasePage{
         onView(withId(R.id.place_name)).check(matches
                 (hasValueEqualTo(InstrumentationRegistry.getTargetContext()
                         .getString(R.string.first_place_address_stuttgart))));
+    }
+
+    /**
+     * Проверить, что передался правильный текст адреса в поле ввода в Google Maps.
+     * @throws UiObjectNotFoundException обработка не найденного объекта.
+     */
+    public void assertAddressInputCorrect() throws UiObjectNotFoundException {
+        UiObject mapInputFieldParent = getUiDevice().findObject(new UiSelector().className(EditText.class));
+        UiObject child = mapInputFieldParent.getChild(new UiSelector().className(TextView.class).instance(0));
+        String inputFieldText = child.getText();
+        assertEquals(inputFieldText, InstrumentationRegistry.getTargetContext()
+                .getString(R.string.first_place_address_stuttgart));
     }
 }

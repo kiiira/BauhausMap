@@ -2,6 +2,7 @@ package com.example.bauhausmap.tests;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
+import androidx.test.uiautomator.UiObjectNotFoundException;
 
 import com.example.bauhausmap.activities.CityDetailsActivity;
 import com.example.bauhausmap.activities.ItemDetailsActivity;
@@ -38,7 +39,7 @@ public class CheckGoogleMapsOpened {
     }
 
     @Test
-    public void testGoogleMapsOpenByButtonClick() {
+    public void testGoogleMapsOpenByButtonClick() throws UiObjectNotFoundException {
 
         mainPage.assertPageDisplayed();
         mainPage.clickFirstButton();
@@ -53,5 +54,6 @@ public class CheckGoogleMapsOpened {
 
         itemDetailsPage.clickOpenMapButton();
         itemDetailsPage.checkGoogleMapsOpened();
+        itemDetailsPage.assertAddressInputCorrect();
     }
 }
