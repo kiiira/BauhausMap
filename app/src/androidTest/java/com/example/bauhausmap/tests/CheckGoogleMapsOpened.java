@@ -4,8 +4,6 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
 import androidx.test.uiautomator.UiObjectNotFoundException;
 
-import com.example.bauhausmap.activities.CityDetailsActivity;
-import com.example.bauhausmap.activities.ItemDetailsActivity;
 import com.example.bauhausmap.activities.MainActivity;
 import com.example.bauhausmap.tests.pages.CityDetailsPage;
 import com.example.bauhausmap.tests.pages.ItemDetailsPage;
@@ -22,20 +20,17 @@ import org.junit.runner.RunWith;
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class CheckGoogleMapsOpened {
 
+    @Rule
+    public ActivityScenarioRule<MainActivity> mainActivityRule = new ActivityScenarioRule<>(MainActivity.class);
     private MainPage mainPage;
     private CityDetailsPage cityDetailsPage;
     private ItemDetailsPage itemDetailsPage;
 
-    @Rule
-    public ActivityScenarioRule<MainActivity> mainActivityRule = new ActivityScenarioRule<>(MainActivity.class);
-    private ActivityScenarioRule<CityDetailsActivity> cityDetailActivityRule = new ActivityScenarioRule<>(CityDetailsActivity.class);
-    private ActivityScenarioRule<ItemDetailsActivity> itemDetailsActivityRule = new ActivityScenarioRule<>(ItemDetailsActivity.class);
-
     @Before
     public void setUp() {
         mainPage = new MainPage(mainActivityRule);
-        cityDetailsPage = new CityDetailsPage(cityDetailActivityRule);
-        itemDetailsPage = new ItemDetailsPage(itemDetailsActivityRule);
+        cityDetailsPage = new CityDetailsPage();
+        itemDetailsPage = new ItemDetailsPage();
     }
 
     @Test

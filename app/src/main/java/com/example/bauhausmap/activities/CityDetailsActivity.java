@@ -78,7 +78,7 @@ public class CityDetailsActivity extends Activity {
         stuttgartSecondPlaceAddress = getString(R.string.second_place_address_stuttgart);
 
         View.OnClickListener onFirstButtonClickListener = v -> {
-            Intent intent = ItemDetailsActivity.newIntent(this, stuttgartFirstPlaceAddress, stuttgartFirstPlaceName, stuttgartFirstPlaceImage);
+            Intent intent = ItemDetailsActivity.newIntent(this, stuttgartFirstPlaceName, stuttgartFirstPlaceAddress, stuttgartFirstPlaceImage);
             startActivity(intent);
         };
 

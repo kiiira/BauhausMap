@@ -21,24 +21,22 @@ import org.junit.runner.RunWith;
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class CheckCityItemDetailsVisibleTest {
 
+    private static final String FIRST_CITY_NAME = "Stuttgart";
+    private static final String FIRST_PLACE_NAME = "Kultur- & Kongresszentrum Liederhalle";
+    @Rule
+    public ActivityScenarioRule<MainActivity> mainActivityRule = new ActivityScenarioRule<>(MainActivity.class);
     private MainPage mainPage;
     private CityDetailsPage cityDetailsPage;
     private ItemDetailsPage itemDetailsPage;
-
-    @Rule
-    public ActivityScenarioRule<MainActivity> mainActivityRule = new ActivityScenarioRule<>(MainActivity.class);
     private ActivityScenarioRule<CityDetailsActivity> cityDetailActivityRule = new ActivityScenarioRule<>(CityDetailsActivity.class);
     private ActivityScenarioRule<ItemDetailsActivity> itemDetailsActivityRule = new ActivityScenarioRule<>(ItemDetailsActivity.class);
 
     @Before
     public void setUp() {
         mainPage = new MainPage(mainActivityRule);
-        cityDetailsPage = new CityDetailsPage(cityDetailActivityRule);
-        itemDetailsPage = new ItemDetailsPage(itemDetailsActivityRule);
+        cityDetailsPage = new CityDetailsPage();
+        itemDetailsPage = new ItemDetailsPage();
     }
-
-    private static final String FIRST_CITY_NAME = "Stuttgart";
-    private static final String FIRST_PLACE_NAME = "Kultur- & Kongresszentrum Liederhalle";
 
     @Test
     public void testItemDetailsVisible() {

@@ -44,7 +44,6 @@ public class ItemDetailsActivity extends Activity {
 
         placeName = findViewById(R.id.place_name);
         placeAddress = findViewById(R.id.place_address);
-        placeImage = findViewById(R.id.place_image);
         placeGoogleMaps = findViewById(R.id.open_google_maps);
         location = getString(R.string.first_place_address_stuttgart)
                 .replaceAll(" ", "+");

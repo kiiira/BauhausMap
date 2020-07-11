@@ -4,15 +4,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.test.InstrumentationRegistry;
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.uiautomator.UiObject;
 import androidx.test.uiautomator.UiObjectNotFoundException;
 import androidx.test.uiautomator.UiSelector;
 
 import com.example.bauhausmap.R;
-import com.example.bauhausmap.activities.ItemDetailsActivity;
-
-import org.junit.Rule;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -25,47 +21,40 @@ import static org.junit.Assert.assertEquals;
 /**
  * Страница, описывающая ItemDetailsActivity.
  */
-public class ItemDetailsPage extends BasePage{
-
-    @Rule
-    public ActivityScenarioRule<ItemDetailsActivity> rule;
-
-    public ItemDetailsPage(ActivityScenarioRule<ItemDetailsActivity> rule) {
-        this.rule = rule;
-    }
+public class ItemDetailsPage extends BasePage {
 
     /**
      * Проверка отображения страницы.
      */
-    public void assertPageDisplayed(){
+    public void assertPageDisplayed() {
         onView(withId(R.id.item_details)).check(matches(isDisplayed()));
     }
 
     /**
      * Проверка отображения названия локации.
      */
-    public void checkNameDisplayed(){
+    public void checkNameDisplayed() {
         onView(withId(R.id.place_name)).check(matches(isDisplayed()));
     }
 
     /**
-     *  Проверка отображения адреса.
+     * Проверка отображения адреса.
      */
-    public void checkAddressDisplayed(){
+    public void checkAddressDisplayed() {
         onView(withId(R.id.place_address)).check(matches(isDisplayed()));
     }
 
     /**
      * Нажатие кнопки открытия Google Maps.
      */
-    public void clickOpenMapButton(){
+    public void clickOpenMapButton() {
         onView(withId(R.id.open_google_maps)).perform(click());
     }
 
     /**
      * Проверка открытия приложения Google Maps.
      */
-    public void checkGoogleMapsOpened(){
+    public void checkGoogleMapsOpened() {
         UiObject map = getUiDevice().findObject(new UiSelector().descriptionContains("Google Maps"));
         try {
             map.isEnabled();
@@ -77,14 +66,15 @@ public class ItemDetailsPage extends BasePage{
     /**
      * Проверка текста элемента, содержащего адрес и строки с адресом.
      */
-    public void assertAddressInput(){
-        onView(withId(R.id.place_name)).check(matches
+    public void assertAddressInput() {
+        onView(withId(R.id.place_address)).check(matches
                 (hasValueEqualTo(InstrumentationRegistry.getTargetContext()
                         .getString(R.string.first_place_address_stuttgart))));
     }
 
     /**
      * Проверить, что передался правильный текст адреса в поле ввода в Google Maps.
+     *
      * @throws UiObjectNotFoundException обработка не найденного объекта.
      */
     public void assertAddressInputCorrect() throws UiObjectNotFoundException {
